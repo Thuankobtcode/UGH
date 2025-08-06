@@ -245,7 +245,7 @@ def main():
     proxies = load_proxies(proxy_file)
     total = len(combos)
 
-    print (f "\ n🔁 is running {total} combo with {threads} threads ... \ n")
+    print(f"\ n🔁 is running {total} combo with {threads} threads ... \ n")
 
     with ThreadPoolExecutor(max_workers=threads) as executor:
         futures = [executor.submit(check, *line.split(":", 1), proxies) for line in combos]
